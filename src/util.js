@@ -1,7 +1,13 @@
-function test()
+function writeLine(text)
 {
-    document.write("test");
+    document.write(`${ text }<br>`);
 }
 
 
-export { test };
+function test()
+{
+    writeLine("test");
+}
+
+
+export { writeLine, test };

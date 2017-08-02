@@ -1,5 +1,5 @@
 import "../style.css";
-import content from "./content.js";
-import { test } from "./util.js";
-document.write(content);
+import Content from "./Content.js";
+import { writeLine, test } from "./util.js";
+writeLine(new Content(":)").test());
 test();
