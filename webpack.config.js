@@ -1,6 +1,9 @@
+var path = require("path");
+
+
 module.exports =
 {
-    entry: "./main.js",
+    entry: "./src/main.js",
     output:
     {
         path: __dirname,
@@ -13,6 +16,10 @@ module.exports =
             {
                 test: /\.css$/,
                 loader: "style-loader!css-loader"
+            },
+            {
+                test: path.join(__dirname, "src"),
+                loader: "babel-loader"
             }
         ]
     }
