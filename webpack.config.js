@@ -3,7 +3,7 @@ var path = require("path");
 
 module.exports =
 {
-    entry: "./src/main.js",
+    entry: "./app/js/main.js",
     output:
     {
         path: __dirname,
@@ -15,10 +15,12 @@ module.exports =
         [
             {
                 test: /\.css$/,
+                include: [ path.join(__dirname, "app", "css") ],
                 loader: "style-loader!css-loader"
             },
             {
-                test: path.join(__dirname, "src"),
+                test: /\.js$/,
+                include: [ path.join(__dirname, "app", "js") ],
                 loader: "babel-loader"
             }
         ]
