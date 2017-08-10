@@ -1,6 +1,9 @@
 var path = require("path");
 
 
+const APP_DIR = path.join(__dirname, "app");
+
+
 module.exports =
 {
     entry: "./app/js/main.js",
@@ -15,12 +18,12 @@ module.exports =
         [
             {
                 test: /\.css$/,
-                include: [ path.join(__dirname, "app", "css") ],
+                include: [ path.join(APP_DIR, "css") ],
                 loader: "style-loader!css-loader"
             },
             {
                 test: /\.js$/,
-                include: [ path.join(__dirname, "app", "js") ],
+                include: [ path.join(APP_DIR, "js") ],
                 loader: "babel-loader"
             }
         ]
