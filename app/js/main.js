@@ -1,4 +1,4 @@
-import "../css/style.css";
+import "../scss/style.scss";
 import Content from "./Content.js";
 import { writeLine, test } from "./util.js";
 

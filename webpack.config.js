@@ -17,9 +17,14 @@ module.exports =
         loaders:
         [
             {
-                test: /\.css$/,
-                include: [ path.join(APP_DIR, "css") ],
-                loader: "style-loader!css-loader"
+                test: /\.scss$/,
+                include: [ path.join(APP_DIR, "scss") ],
+                use:
+                [
+                    { loader: "style-loader" },
+                    { loader: "css-loader" },
+                    { loader: "sass-loader" }
+                ]
             },
             {
                 test: /\.js$/,
