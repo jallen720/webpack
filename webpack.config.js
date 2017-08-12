@@ -1,15 +1,16 @@
 var path = require("path");
 
 
-const APP_DIR = path.join(__dirname, "app");
+const CLIENT_DIR = path.join(__dirname, "client");
+const CLIENT_JS_DIR = path.join(CLIENT_DIR, "js");
 
 
 module.exports =
 {
-    entry: "./app/js/main.js",
+    entry: path.join(CLIENT_JS_DIR, "main.js"),
     output:
     {
-        path: __dirname,
+        path: path.join(__dirname, "public"),
         filename: "bundle.js"
     },
     module:
@@ -18,7 +19,7 @@ module.exports =
         [
             {
                 test: /\.scss$/,
-                include: [ path.join(APP_DIR, "scss") ],
+                include: [ path.join(CLIENT_DIR, "scss") ],
                 use:
                 [
                     { loader: "style-loader" },
@@ -28,7 +29,7 @@ module.exports =
             },
             {
                 test: /\.js$/,
-                include: [ path.join(APP_DIR, "js") ],
+                include: [ CLIENT_JS_DIR ],
                 loader: "babel-loader"
             }
         ]
