@@ -1,11 +1,7 @@
-$font-stack: Helvetica, sans-serif;
-$primary-color: #333;
-$bg-color: #aaa;
-
-
-body
+#container
 {
-    font: 100% $font-stack;
-    color: $primary-color;
-    background-color: $bg-color;
+    display: flex;
+    width: 100%;
+    height: 400px;
+    background-color: blue;
 }

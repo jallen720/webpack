@@ -10,11 +10,6 @@ const app = express();
 const router = express.Router();
 
 
-// Setup view engine.
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "pug");
-
-
 // Setup logging.
 app.use(morgan("dev"));
 
@@ -64,7 +59,6 @@ app.use((err, req, res, next) =>
 
     // render the error page
     res.status(err.status || 500);
-    res.render("error", { error: err.message });
 });
 
 
