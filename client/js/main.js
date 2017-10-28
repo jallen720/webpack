@@ -6,6 +6,6 @@ import errorTemplate from "../pug/error.pug";
 
 
 writeLine(containerTemplate());
-writeLine(new Content(":)").test());
 writeLine(errorTemplate({ error: "error message"}));
+writeLine(new Content(":)").test());
 test();
