@@ -38,7 +38,7 @@ module.exports =
             {
                 test   : /\.pug$/,
                 include: [ CLIENT_PUG_DIR ],
-                loader : "pug-loader",
+                loader : "pug-loader"
             }
         ]
     },
