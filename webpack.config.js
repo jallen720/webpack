@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const CLIENT_DIR = path.join(__dirname, "client");
 const CLIENT_JS_DIR = path.join(CLIENT_DIR, "js");
-const CLIENT_PUG_DIR = path.join(CLIENT_DIR, "pug");
 const join = path.join;
 
 
@@ -36,14 +35,14 @@ module.exports =
                 loader: "babel-loader"
             },
             {
-                test   : /\.pug$/,
-                include: [ CLIENT_PUG_DIR ],
-                loader : "pug-loader"
+                test: /\.pug$/,
+                include: [ path.join(CLIENT_DIR, "pug") ],
+                loader: "pug-loader"
             }
         ]
     },
     plugins:
     [
-        new HtmlWebpackPlugin({ template: join(CLIENT_PUG_DIR, "index.pug") })
+        new HtmlWebpackPlugin()
     ]
 };
